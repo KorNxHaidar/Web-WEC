@@ -170,7 +170,7 @@ function deinitems(action, index) {
             if(cart[index].count <= 0) {
                 Swal.fire({
                     icon: 'warning',
-                    title: 'Are you sure to remove?',
+                    title: 'Are you sure to delete?',
                     showConfirmButton: true,
                     showCancelButton: true,
                     confirmButtonText: 'Delete',
