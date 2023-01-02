@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB SHOPING</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="./imgs/logo-full.png" class="logonav">
+            </a>
+
+            <div class="nav-profile">
+                <p class="nav-profile-name">Lionbug</p>
+                <div onclick="openCart()" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="Search something....">
+            <a onclick="searchproduct('all')" class="sidebar-items">
+                All product
+            <a onclick="searchproduct('shoe')" class="sidebar-items">
+                Shoe
+            </a>
+            <a onclick="searchproduct('shirt')" class="sidebar-items">
+                Shirt
+            </a>
+            <a onclick="searchproduct('hat')" class="sidebar-items">
+                Hat
+            </a>
+        </div>
+        <div id="productlist" class="product">
+            
+            
+        </div>
+    </div>
+
+    <div id="modalDesc" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+            <div class="modal-page">
+                <h2>Detail</h2>
+                <br>
+                <div class="container-cart">
+                    <div class="modaldesc-content">
+                        <img id="mdd-img" class="modaldesc-img" src="./imgs/product-item1.jpg" alt="">    
+                        <div class="modaldesc-detail">
+                            <p id="mdd-name" style="font-size: 1.5vw;">Product Name</p>
+                            <p id="mdd-price" style="font-size: 1.2vw;">500 THB</p>
+                            <br>
+                            <p id="mdd-desc" style="color: #adadad;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore ea assumenda accusamus non dolorem. Praesentium facilis vero asperiores debitis quam. Sit fuga itaque dolorum laboriosam consectetur. Illo minima fugit, eligendi numquam delectus adipisci praesentium animi nobis ex saepe. Temporibus explicabo reprehenderit quia modi cum iste numquam dolorum, fuga maxime corrupti atque distinctio laudantium delectus accusantium, consequatur quae deserunt eius! Non et inventore animi id in. Amet voluptates nesciunt odit dolor quo maxime possimus atque nam, nemo est quam consectetur veniam aliquid! Numquam ullam officia adipisci provident earum, cum architecto illum sed deserunt in odio quibusdam omnis necessitatibus soluta itaque corporis optio laudantium, modi eius accusantium harum! Cumque vero sunt animi alias consectetur maxime distinctio. Sed excepturi, autem sapiente eligendi ullam reiciendis cumque earum optio totam sequi magni dolorem facilis sunt itaque, culpa consequuntur neque, deserunt provident. Perspiciatis iusto assumenda voluptatibus, repellat quia necessitatibus soluta rem impedit sint illo deserunt sapiente, praesentium mollitia officia nisi voluptas porro obcaecati, ipsam natus? Dolores nulla saepe odit et quibusdam vel, asperiores voluptates amet dicta recusandae nobis blanditiis alias tempora ea! Ducimus dolor laudantium ipsum et ex voluptatem dignissimos assumenda necessitatibus excepturi impedit harum, sapiente enim amet! Magni, minus fuga et repellendus tempore unde, vitae ipsum, aliquam officiis inventore libero ex? Ratione sed incidunt facilis labore, quia neque! Vel magni accusantium quasi harum atque dolor, vitae autem nostrum itaque nisi deserunt quam temporibus a culpa amet in qui. Neque fugiat explicabo sit officia eligendi itaque pariatur eaque consequatur libero? A quia officia modi, voluptas est, ullam delectus nam voluptate, sapiente aliquid qui odit saepe ut ducimus nulla repudiandae veritatis magnam eveniet accusamus numquam eum! Distinctio, velit, quis nisi molestias veniam alias consequatur unde iste earum adipisci vitae, quas voluptatem reprehenderit numquam. Expedita maxime totam esse aliquid voluptatem doloribus quasi maiores in iure nemo, quo laudantium, fuga voluptate tenetur non deserunt, est magnam molestiae eaque culpa illum architecto enim? Voluptatem, iusto non? Repellat delectus rerum eum libero sed, optio iure possimus, ad fuga est assumenda nulla debitis deserunt placeat architecto itaque excepturi totam voluptates cum, odio velit voluptatum! Recusandae, ipsum veniam temporibus sequi quia ab quos itaque voluptate dolore obcaecati eveniet ad ratione quis labore consequuntur ipsa molestiae praesentium maxime illum earum dolorem aliquid similique quaerat! Inventore ipsam ipsa enim impedit maiores sint velit, aut architecto, consequuntur odit expedita ex quae modi fugit! Itaque harum natus nobis id omnis labore dignissimos debitis porro excepturi recusandae, nostrum eum saepe quod eveniet ea incidunt. Iure exercitationem eveniet odio quae totam? Dicta accusantium repellat animi iure quidem! Optio, unde molestiae sapiente asperiores nisi dignissimos aut cumque quis quasi cupiditate? Tempore optio natus, laborum accusamus culpa non eos fugiat quod dolore aliquid quos magni ducimus veniam, iusto voluptatibus reprehenderit? Incidunt sed, maxime quasi iusto asperiores autem pariatur ratione magni quos eum quae odio quia nesciunt sunt tempore tempora est voluptas delectus dolores consequuntur illo! Provident sunt molestiae tempora, cum porro est aperiam error temporibus! Ipsam eum impedit repellendus quam dolorum quia, temporibus facere deleniti. Earum repellat ex sequi ea blanditiis esse provident, veritatis quisquam iusto animi velit ducimus voluptates perspiciatis eligendi doloremque sunt? Nihil facilis amet sed possimus fuga ipsa sunt quo ducimus aliquam dignissimos. Culpa nisi dicta exercitationem neque temporibus blanditiis adipisci, aut veniam dolorum error nostrum odio enim quae ducimus quibusdam ad quidem nesciunt esse perferendis a magni nihil ratione. Debitis eos quam quo blanditiis repellat culpa excepturi, nulla possimus laborum et exercitationem? Voluptatum exercitationem itaque atque consequatur ad, autem corporis debitis id eius. A molestias expedita, maiores ullam similique totam! Fugit, fuga consequatur! Perferendis nostrum quaerat suscipit soluta pariatur ducimus aut ut repellendus repudiandae. Consectetur esse omnis nostrum fugiat, nemo ea accusantium unde sequi exercitationem cumque eaque fuga dolor? Quaerat iste, a impedit quod voluptatibus ipsam incidunt porro! Dicta, nemo vel. Numquam tenetur rerum reiciendis, esse architecto maxime unde autem ab qui eos, at minus perspiciatis recusandae. Quas distinctio eaque libero odio, ullam corporis nemo. Doloremque eum porro inventore quibusdam, nobis incidunt mollitia quam eos iure numquam at distinctio eaque, dolore nihil delectus necessitatibus natus pariatur nisi in velit corrupti quisquam quasi. Odio fugit sit nemo minus voluptatum modi quam, magnam veritatis commodi! Distinctio error vel cumque soluta vero! Dolores officiis aperiam quibusdam accusantium eligendi ducimus expedita illo natus error, ea dolorem numquam obcaecati minima nemo sed laboriosam at provident amet eum earum dicta. Tenetur ratione aperiam unde distinctio ex animi libero facilis tempora illum vel ad veniam nesciunt, delectus eum dolor voluptatem nam, nulla laboriosam amet aut nostrum enim. Pariatur, nihil obcaecati id possimus excepturi odit, iusto et beatae quam nostrum eveniet quae, autem accusantium magni repellat ullam perspiciatis? Natus ratione dolores reprehenderit earum vero possimus quis eaque recusandae! Impedit voluptate in porro ea aspernatur repellendus quod, illum vel cumque praesentium, totam quia blanditiis velit debitis maiores eaque dolorum incidunt sint aliquam animi officia ratione? A earum amet magnam perferendis nam error laboriosam voluptate animi, accusamus consequatur. Ut quasi repellat doloremque autem ducimus assumenda. Consequuntur maiores, perferendis asperiores nisi, non placeat architecto, unde odio eaque ad magnam neque. Aliquid accusantium amet iusto iste ratione culpa? Sunt animi, iusto architecto quae ducimus porro beatae modi laudantium, explicabo, deleniti perspiciatis. Soluta, optio nobis, nostrum animi iusto voluptatem deserunt repellat architecto quam possimus nisi, cum a quis nihil error aliquid delectus enim inventore provident quidem omnis et aut voluptate illum! Dolores quasi eius, quisquam sapiente obcaecati ducimus delectus esse quod error quidem illo laboriosam? Consectetur neque quis soluta reiciendis id repellat libero corporis, necessitatibus exercitationem quod rem, molestiae autem, ipsam earum perferendis maiores iure quae assumenda? Laborum dolor dolorem hic, fugit sunt autem quis necessitatibus rerum ducimus pariatur doloribus odio cumque culpa tenetur laudantium est impedit quod expedita corrupti possimus molestiae velit ipsa! Magni ipsa impedit pariatur quas recusandae delectus ipsam nisi fuga numquam ullam eveniet nulla ex beatae dolores, voluptatem atque dolor culpa distinctio. Mollitia dolores deleniti quis pariatur eius officiis expedita magnam placeat eaque aspernatur quidem provident reprehenderit possimus explicabo earum incidunt nisi odio ut architecto minus, adipisci molestiae. Error debitis qui aspernatur maxime minus distinctio ratione!</p>
+                            <br>
+                            <div class="btn-control">
+                                <button onclick="closeModal()" class="btn">
+                                    Close
+                                </button>
+                                <button onclick="addtocart()" class="btn btn-buy">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        
+    </div>
+
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+            <div class="modal-page">
+                <h2>My cart</h2>
+                <br>
+                <div id="mycart" class="container-cartlist">
+                    
+                </div>
+                <div class="btn-control">
+                    <button onclick="closeModal()" class="btn">
+                        Cancel
+                    </button>
+                    <button class="btn btn-buy">
+                        Buy
+                    </button>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
